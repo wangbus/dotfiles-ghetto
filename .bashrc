@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Auto detect platform
+platform=`uname`
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -18,7 +21,6 @@ export BASH=$HOME/.bash_it
 
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
-export BASH_THEME='hawaii50'
 
 # Your place for hosting Git repos. I use this for private repos.
 export GIT_HOSTING='git@git.domain.com'
@@ -123,7 +125,11 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # ls aliases
-alias ls='ls -GHs'
+if [ "$platform" == 'Linux' ]; then
+	alias ls='ls -Hs --color=auto'
+else
+	alias ls='ls -GHs'
+fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'

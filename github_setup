@@ -1,0 +1,4 @@
+git config --global github.user  your-name
+git config --global github.token your-token
+or set g:github_user and g:github_token in your vimrc
+or set shell env vars GITHUB_USER and GITHUB_TOKEN

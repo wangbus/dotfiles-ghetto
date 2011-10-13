@@ -46,7 +46,7 @@ if has("syntax")
 endif
 
 set background=dark             " sets the background color (I like it dark)
-colorscheme zenburn 
+colorscheme molokai
 " --------------------------------------------------------------------------- "
 " visual
 " --------------------------------------------------------------------------- "
